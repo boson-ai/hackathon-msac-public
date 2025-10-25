@@ -10,6 +10,7 @@ def b64(path):
 
 reference_path = "./ref-audio/hogwarts_wand_seller_v2.wav"
 reference_transcript = (
+    "[SPEAKER1]"
     "I would imagine so. A wand with a dragon heartstring core is capable of dazzling magic. "
     "And the bond between you and your wand should only grow stronger. Do not be surprised at your new "
     "wand's ability to perceive your intentions - particularly in a moment of need."
@@ -34,7 +35,7 @@ resp = client.chat.completions.create(
                 "input_audio": {"data": b64(reference_path), "format": "wav"}
             }],
         },
-        {"role": "user", "content": "[SPEAKER0] Welcome to Boson AI's voice generation system."},
+        {"role": "user", "content": "[SPEAKER1] Welcome to Boson AI's voice generation system."},
     ],
     modalities=["text", "audio"],
     max_completion_tokens=4096,
